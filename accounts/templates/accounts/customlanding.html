@@ -1,0 +1,33 @@
+<html>
+
+<body>
+
+<h1>Customer</h1>
+<span id="logout" style="font-size: 180%; font-family: roboto; color: white; position: absolute; right: 2.5%; top: 13%; border: 5px solid #f6500a; border-radius: 10px 10px 10px; background-color: #f6500a;"><a href="{% url 'logout' %}">Logout</a></span>
+
+
+
+<br><br><br><br><hr>
+
+{% for item in all %}
+
+	{% if item.typeOfProfile == "Handyman" %}
+
+		Nickname: 				{{item.user.username}}<br> <!-- lists all handymen profiles currently, needs 																		to get search func added-->
+		Profession: 			{{item.typeOfJob}}<br>
+		Location: 				{{item.location}}<br>
+		Description: 			{{item.description}}<br>
+		Years of experience:	{{item.experience}}<br><hr>
+
+	{% endif %}
+	<br><br>
+{% endfor %}
+
+
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  
+        <title>Handyman Booking Site</title>
+        <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name=“author” content=“group8”>
+        <meta name=“last-modified” content=“20/4/2021”>
+
+  </head>
+
+
+<style type="text/css">
+  
+  body {
+    
+  background-color: #bbbea9;
+
+  }
+
+  #logo {
+  max-width: 28%;
+  max-height: 28%;
+  padding: 3px 3px 3px 3px;
+  margin-left: 36%;
+  margin-right: 36%;
+
+  }
+  #naranc {
+
+    margin: -8px -8px 0px -8px;
+    min-height: 30px;
+    background-color: #241C17;
+  }
+
+  #naranc2 {
+
+    margin: 0px -8px 10px -8px;
+    min-height: 6px;
+    background-color: #f6500a;
+  }
+
+
+  form {
+    border: 4px solid #241C17;
+    background-color: #f6500a;
+    max-width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 8%;
+    border-radius: 7px;
+    font-family: arial light;
+    padding: 20px 10px 20px 10px;
+
+  }
+
+  .container {
+    padding: 16px;
+
+  }
+
+  .fields input {
+    width: 100%;
+    padding: 12px 11px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #241c17;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-family: arial;
+    font-style: italic;
+    background-color: #f5f5f5;
+  }
+
+  .dugme input {
+    background-color: #241C17;
+    color: white;
+    padding: 12px 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 8px;
+    margin-bottom: 2px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 7px;
+    font-family: arial light;
+    font-size: 17px;
+  }
+
+  .dugme input:hover {
+
+     background-color: #130a01;
+    color: #f75705;
+    border-radius: 7px;
+  }
+
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+
+
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+  }
+  
+</style>
+
+
+
+<body>
+
+<div id="naranc">
+<img src="https://i.imgur.com/B1huFdv.png" id="logo">
+
+</div>
+
+<div id="naranc2">
+
+
+</div>
+
+
+
+
+
+<form action="" method="POST">
+ <div class="fields"> 
+  {% csrf_token %}
+
+ 
+  {{form.username.label}}
+  {{form.username}}
+
+  {{form.email.label}}
+  {{form.email}}
+
+  {{form.password1.label}}
+  {{form.password1}}
+
+  {{form.password2.label}}
+  {{form.password2}}
+
+  {{profile_form}}
+
+  {{form.errors}}
+</div>
+  {% for message in messages %}
+
+    <p>{{message}}</p>
+
+  {% endfor %}
+<div class="dugme">
+    <input type="submit" name="Create User">
+</div>
+ 
+  
+</form>
+
+
+
+
+
+
+
+
+</body>

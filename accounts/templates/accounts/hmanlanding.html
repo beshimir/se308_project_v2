@@ -1,0 +1,22 @@
+<html>
+
+<body>
+<h1>Handyman!</h1>
+<span id="logout" style="font-size: 180%; font-family: roboto; color: white; position: absolute; right: 2.5%; top: 13%; border: 5px solid #f6500a; border-radius: 10px 10px 10px; background-color: #f6500a;"><a href="{% url 'logout' %}">Logout</a></span>
+
+<br><br><br><br><hr>
+
+
+{% for item in all %}
+	{% if item.user.username|slugify == request.user|slugify %}
+		{{}}<br> <!-- handyman profile update form goes here -->
+	{% endif %}
+
+{% endfor %}
+
+</body>
+
+
+
+
+</html>
